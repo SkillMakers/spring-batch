@@ -1,0 +1,43 @@
+$ java -jar import-commandes.jar --import.crash-a-la-ligne=6543 fichier=donnees/commandes-2026-11-24.csv
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] launched with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-24.csv, type=class java.lang.String, identify
+INFO AbstractStep : Executing step: [chargement]
+>>> ARRET BRUTAL a la ligne 6543
+(code de sortie : 137)
+ commandes_en_base 
+-------------------
+              6500
+         List of relations
+ Schema |   Name   | Type  | Owner 
+--------+----------+-------+-------
+ public | commande | table | batch
+
+=== relance
+$ java -jar import-commandes.jar fichier=donnees/commandes-2026-11-24.csv
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] launched with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-24.csv, type=class java.lang.String, identify
+INFO AbstractStep : Executing step: [chargement]
+ERROR ChunkOrientedStep : Chunk write failed with an exception that cannot be skipped
+ERROR ChunkOrientedStep : Rolling back chunk transaction
+org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO commande (id, client, montant, date_commande) VALUES (?, ?, ?, ?)]; ERROR: duplicate key value violates unique constraint "comman
+  Détail : Key (id)=(1) already exists.
+Caused by: java.sql.BatchUpdateException: Batch entry 0 INSERT INTO commande (id, client, montant, date_commande) VALUES (('1'::int8), ('Moreau'), ('386.92'::numeric), ('2026-11-19'::date)) was aborted: ERROR: duplicate 
+	... 65 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "commande_pkey"
+  Détail : Key (id)=(1) already exists.
+	... 73 common frames omitted
+ERROR AbstractStep : Encountered an error executing step chargement in job importCommandes
+org.springframework.batch.core.step.FatalStepExecutionException: Unable to process chunk
+Caused by: org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO commande (id, client, montant, date_commande) VALUES (?, ?, ?, ?)]; ERROR: duplicate key value violates unique constra
+  Détail : Key (id)=(1) already exists.
+	... 58 common frames omitted
+Caused by: java.sql.BatchUpdateException: Batch entry 0 INSERT INTO commande (id, client, montant, date_commande) VALUES (('1'::int8), ('Moreau'), ('386.92'::numeric), ('2026-11-19'::date)) was aborted: ERROR: duplicate 
+	... 65 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "commande_pkey"
+  Détail : Key (id)=(1) already exists.
+	... 73 common frames omitted
+INFO AbstractStep : Step: [chargement] executed in 326ms
+BILAN lues=100 ecrites=0 rejets=0 commits=0 appels-controle=100 statut=FAILED
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] completed with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-24.csv, type=class java.lang.String, identif
+(code de sortie : 5)
+ commandes_en_base 
+-------------------
+              6500

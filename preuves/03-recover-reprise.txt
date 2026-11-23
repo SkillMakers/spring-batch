@@ -1,0 +1,20 @@
+$ java -jar import-commandes.jar --import.recuperer-apres-crash=true fichier=donnees/commandes-2026-11-24.csv
+INFO TaskExecutorJobOperator : Recovering job execution: JobExecution: id=1, version=1, startTime=2026-11-23T14:21:40.930595, endTime=null, lastUpdated=2026-11-23T14:21:40.931595, status=STARTED, exitStatus=exitCode=UNKN
+RECUPERATION execution 1 : FAILED
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] launched with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-24.csv, type=class java.lang.String, identify
+INFO AbstractStep : Executing step: [chargement]
+INFO AbstractStep : Step: [chargement] executed in 1s233ms
+BILAN lues=3500 ecrites=3500 rejets=0 commits=35 appels-controle=3500 statut=COMPLETED
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] completed with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-24.csv, type=class java.lang.String, identif
+(code de sortie : 0)
+ commandes_en_base 
+-------------------
+             10000
+ execution |  status   | exit_code 
+-----------+-----------+-----------
+         1 | FAILED    | UNKNOWN
+         2 | COMPLETED | COMPLETED
+ etape |  status   | lues | ecrites | commits 
+-------+-----------+------+---------+---------
+     1 | FAILED    | 6500 |    6500 |      65
+     2 | COMPLETED | 3500 |    3500 |      35

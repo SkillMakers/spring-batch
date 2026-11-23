@@ -1,0 +1,31 @@
+$ java -jar import-commandes.jar --import.crash-a-la-ligne=6543 fichier=donnees/commandes-2026-11-24.csv
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] launched with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-24.csv, type=class java.lang.String, identify
+INFO AbstractStep : Executing step: [chargement]
+>>> ARRET BRUTAL a la ligne 6543
+(code de sortie : 137)
+ commandes_en_base 
+-------------------
+              6500
+ execution | status  | exit_code 
+-----------+---------+-----------
+         1 | STARTED | UNKNOWN
+ etape | status  | lues | ecrites | commits 
+-------+---------+------+---------+---------
+     1 | STARTED | 6500 |    6500 |      65
+
+=== relance
+$ java -jar import-commandes.jar fichier=donnees/commandes-2026-11-24.csv
+ERROR SpringApplication : Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+Caused by: org.springframework.batch.core.launch.JobExecutionAlreadyRunningException: A job execution for this job is already running: JobExecution: id=1, version=1, startTime=2026-11-23T14:21:40.930595, endTime=null, la
+	... 22 common frames omitted
+(code de sortie : 1)
+ commandes_en_base 
+-------------------
+              6500
+ execution | status  | exit_code 
+-----------+---------+-----------
+         1 | STARTED | UNKNOWN
+ etape | status  | lues | ecrites | commits 
+-------+---------+------+---------+---------
+     1 | STARTED | 6500 |    6500 |      65

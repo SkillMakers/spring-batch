@@ -1,0 +1,36 @@
+$ java -jar import-commandes.jar --import.tolerant=true fichier=donnees/commandes-2026-11-26.csv
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] launched with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-26.csv, type=class java.lang.String, identify
+INFO AbstractStep : Executing step: [chargement]
+REJET controle : ligne 20500 : montant -427.55
+REJET controle : ligne 21000 : montant -419.86
+REJET controle : ligne 21500 : montant -286.79
+REJET controle : ligne 22000 : montant -67.17
+REJET controle : ligne 22500 : montant -363.70
+REJET controle : ligne 23000 : montant -256.62
+REJET controle : ligne 23500 : montant -418.15
+REJET controle : ligne 24000 : montant -409.60
+REJET controle : ligne 24500 : montant -335.11
+REJET controle : ligne 25000 : montant -141.94
+ERROR ChunkOrientedStep : Rolling back chunk transaction
+org.springframework.batch.core.step.skip.SkipLimitExceededException: Skip limit of '10' exceeded
+Caused by: com.example.commandes.MontantInvalideException: ligne 25500 : montant -260.99
+	... 60 common frames omitted
+ERROR AbstractStep : Encountered an error executing step chargement in job importCommandes
+org.springframework.batch.core.step.FatalStepExecutionException: Unable to process chunk
+Caused by: org.springframework.batch.core.step.skip.SkipLimitExceededException: Skip limit of '10' exceeded
+	... 58 common frames omitted
+Caused by: com.example.commandes.MontantInvalideException: ligne 25500 : montant -260.99
+	... 60 common frames omitted
+INFO AbstractStep : Step: [chargement] executed in 1s485ms
+BILAN lues=5500 ecrites=5390 rejets=10 commits=54 appels-controle=5500 statut=FAILED
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] completed with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-26.csv, type=class java.lang.String, identif
+(code de sortie : 5)
+ commandes_en_base 
+-------------------
+              5390
+ execution | status | exit_code 
+-----------+--------+-----------
+         1 | FAILED | FAILED
+ etape | status | lues | ecrites | commits 
+-------+--------+------+---------+---------
+     1 | FAILED | 5500 |    5390 |      54

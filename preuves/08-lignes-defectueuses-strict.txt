@@ -1,0 +1,24 @@
+$ java -jar import-commandes.jar fichier=donnees/commandes-2026-11-25.csv
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] launched with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-25.csv, type=class java.lang.String, identify
+INFO AbstractStep : Executing step: [chargement]
+ERROR ChunkOrientedStep : Rolling back chunk transaction
+com.example.commandes.MontantInvalideException: ligne 12500 : montant -15.00
+ERROR AbstractStep : Encountered an error executing step chargement in job importCommandes
+org.springframework.batch.core.step.FatalStepExecutionException: Unable to process chunk
+Caused by: com.example.commandes.MontantInvalideException: ligne 12500 : montant -15.00
+	... 58 common frames omitted
+INFO AbstractStep : Step: [chargement] executed in 1s67ms
+BILAN lues=2500 ecrites=2400 rejets=0 commits=24 appels-controle=2500 statut=FAILED
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] completed with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-25.csv, type=class java.lang.String, identif
+(code de sortie : 5)
+ commandes_en_base 
+-------------------
+             12400
+ execution |  status   | exit_code 
+-----------+-----------+-----------
+         1 | COMPLETED | COMPLETED
+         2 | FAILED    | FAILED
+ etape |  status   | lues  | ecrites | commits 
+-------+-----------+-------+---------+---------
+     1 | COMPLETED | 10000 |   10000 |     100
+     2 | FAILED    |  2500 |    2400 |      24

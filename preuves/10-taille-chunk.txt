@@ -1,0 +1,10 @@
+chunk 1, essai 1 : executed in 1m57s306ms commits=10000 
+chunk 1, essai 2 : executed in 1m56s656ms commits=10000 
+chunk 10, essai 1 : executed in 14s539ms commits=1000 
+chunk 10, essai 2 : executed in 14s247ms commits=1000 
+chunk 100, essai 1 : executed in 2s298ms commits=100 
+chunk 100, essai 2 : executed in 2s339ms commits=100 
+chunk 1000, essai 1 : executed in 1s437ms commits=10 
+chunk 1000, essai 2 : executed in 1s394ms commits=10 
+chunk 10000, essai 1 : executed in 1s210ms commits=1 
+chunk 10000, essai 2 : executed in 1s240ms commits=1 

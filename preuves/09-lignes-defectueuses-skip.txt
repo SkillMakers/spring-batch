@@ -1,0 +1,21 @@
+$ java -jar import-commandes.jar --import.tolerant=true fichier=donnees/commandes-2026-11-25.csv
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] launched with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-25.csv, type=class java.lang.String, identify
+INFO AbstractStep : Executing step: [chargement]
+REJET controle : ligne 12500 : montant -15.00
+REJET lecture : Parsing error at line: 5001 in resource=[file [donnees/commandes-2026-11-25.csv]], input=[15000,Michel,146.64]
+REJET ecriture : commande 42 deja en base
+INFO AbstractStep : Step: [chargement] executed in 3s796ms
+BILAN lues=9999 ecrites=9997 rejets=3 commits=100 appels-controle=10099 statut=COMPLETED
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] completed with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-25.csv, type=class java.lang.String, identif
+(code de sortie : 0)
+ commandes_en_base 
+-------------------
+             19997
+ execution |  status   | exit_code 
+-----------+-----------+-----------
+         1 | COMPLETED | COMPLETED
+         2 | COMPLETED | COMPLETED
+ etape |  status   | lues  | ecrites | commits 
+-------+-----------+-------+---------+---------
+     1 | COMPLETED | 10000 |   10000 |     100
+     2 | COMPLETED |  9999 |    9997 |     100

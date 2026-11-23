@@ -1,0 +1,14 @@
+$ java -jar import-commandes.jar --import.taille-chunk=10000 --import.crash-a-la-ligne=9999 fichier=donnees/commandes-2026-11-24.csv
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] launched with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-24.csv, type=class java.lang.String, identify
+INFO AbstractStep : Executing step: [chargement]
+>>> ARRET BRUTAL a la ligne 9999
+(code de sortie : 137)
+ commandes_en_base 
+-------------------
+                 0
+ execution | status  | exit_code 
+-----------+---------+-----------
+         1 | STARTED | UNKNOWN
+ etape | status  | lues | ecrites | commits 
+-------+---------+------+---------+---------
+     1 | STARTED |    0 |       0 |       0

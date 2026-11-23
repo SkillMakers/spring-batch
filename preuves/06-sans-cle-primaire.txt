@@ -1,0 +1,17 @@
+$ java -jar import-commandes.jar --import.crash-a-la-ligne=6543 fichier=donnees/commandes-2026-11-24.csv lancement=1764000000
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] launched with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-24.csv, type=class java.lang.String, identify
+INFO AbstractStep : Executing step: [chargement]
+>>> ARRET BRUTAL a la ligne 6543
+(code de sortie : 137)
+
+=== relance, nouvel horodatage
+$ java -jar import-commandes.jar fichier=donnees/commandes-2026-11-24.csv lancement=1764003600
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] launched with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-24.csv, type=class java.lang.String, identify
+INFO AbstractStep : Executing step: [chargement]
+INFO AbstractStep : Step: [chargement] executed in 2s611ms
+BILAN lues=10000 ecrites=10000 rejets=0 commits=100 appels-controle=10000 statut=COMPLETED
+INFO TaskExecutorJobLauncher : Job: [SimpleJob: [name=importCommandes]] completed with the following parameters: [{JobParameter{name='fichier', value=donnees/commandes-2026-11-24.csv, type=class java.lang.String, identif
+(code de sortie : 0)
+ lignes | commandes_distinctes 
+--------+----------------------
+  16500 |                10000

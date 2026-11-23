@@ -1,0 +1,3 @@
+chunk 100 : executed in 3s848ms BILAN lues=9999 ecrites=9997 rejets=3 commits=100 appels-controle=10099 statut=COMPLETED 
+chunk 1000 : executed in 13s461ms BILAN lues=9999 ecrites=9997 rejets=3 commits=10 appels-controle=10999 statut=COMPLETED 
+chunk 10000 : executed in 1m56s112ms BILAN lues=9999 ecrites=9997 rejets=3 commits=1 appels-controle=19997 statut=COMPLETED 

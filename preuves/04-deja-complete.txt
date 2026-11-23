@@ -1,0 +1,17 @@
+$ java -jar import-commandes.jar fichier=donnees/commandes-2026-11-24.csv
+ERROR SpringApplication : Application run failed
+java.lang.IllegalStateException: Failed to execute ApplicationRunner
+Caused by: org.springframework.batch.core.launch.JobInstanceAlreadyCompleteException: A job instance already exists and is complete for identifying parameters={JobParameter{name='fichier', value=donnees/commandes-2026-11
+	... 22 common frames omitted
+(code de sortie : 1)
+ commandes_en_base 
+-------------------
+             10000
+ execution |  status   | exit_code 
+-----------+-----------+-----------
+         1 | FAILED    | UNKNOWN
+         2 | COMPLETED | COMPLETED
+ etape |  status   | lues | ecrites | commits 
+-------+-----------+------+---------+---------
+     1 | FAILED    | 6500 |    6500 |      65
+     2 | COMPLETED | 3500 |    3500 |      35
